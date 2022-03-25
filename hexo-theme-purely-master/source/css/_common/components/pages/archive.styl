@@ -1,0 +1,51 @@
+#archives {
+	line-height: 1.5;
+
+	ul, li {
+		list-style: none;
+	}
+
+	li {
+		line-height: 2;
+	}
+}
+
+.al_post_list {
+	margin-left:100px;
+	padding: 20px;
+	border-left:1px solid $gray-350;
+
+	+mobile() {
+		margin-left: 0;
+		border-left: 0;
+	}
+
+	+tablet() {
+		margin-left: 80px;
+	}
+
+	li {font-size: 18px;}
+}
+
+.archive-title {
+	margin-bottom:10px;
+}
+
+.al_year {
+	font-size:30px;
+	margin: 0;
+	padding: 20px;
+	line-height: 1;
+	border-left: 1px solid $line-light;
+}
+.al_mon_list {
+	margin: 0;
+	padding: 0;
+	border-left:1px solid $gray-350;
+}
+.al_mon {
+	display:block;
+	padding: 20px;
+	font-size: 20px;
+	border-bottom:1px solid $gray-350;
+}

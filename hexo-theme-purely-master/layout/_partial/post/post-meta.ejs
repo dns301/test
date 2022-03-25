@@ -1,0 +1,16 @@
+<ul class="post-meta">
+  <li><i class="fa fa-user"></i> <%= __('meta.author') %> <%= config.author %></li>
+  <li><i class="fa fa-calendar"></i> <%= __('meta.date') %> <%= date(post.date, 'MMM D') %></li>
+  <li><i class="fa fa-folder"></i> <%= __('meta.categories') %>
+  <% if (post.categories.length){ %>
+    <%- list_categories(post.categories, {
+      show_count: false,
+      class: 'article-category',
+      style: 'none',
+      separator: ' <i class="fa fa-caret-right"></i> '
+    }) %>
+  <% } else { %>
+    <%= __('no_categories') %>
+  <% } %>
+  </li>
+</ul>

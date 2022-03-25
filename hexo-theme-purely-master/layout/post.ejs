@@ -1,0 +1,26 @@
+<article class="post-detail">
+  <h1 class="post-title"><a href="<%- url_for(page.link) %>"><%= page.title %></a></h1>
+  <%- partial('_partial/post/post-meta', {post: page}) %>
+  <div class="post-content">
+      <% if (page.photos && page.photos.length){ %>
+        <%- partial('_partial/post/gallery') %>
+      <% } %>
+      <%- page.content %>
+  </div>
+  <% if(page.tags.length) { %>
+    <div class="tags">
+    <span><i class="fa fa-tags"></i> <%= __('meta.tags') %></span>
+      <% if (page.tags && page.tags.length) { %>
+        <%- list_tags(page.tags, {
+          show_count: false,
+          class: 'post-tag'
+        }) %>
+      <% } %>
+    </div>
+  <% } %>
+
+</article>
+
+<!-- Comments -->
+<%- partial('_partial/_third-party/comments/comments') %>
+<!-- End Comments -->
